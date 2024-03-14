@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Teko:300,regular,500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script:regular,500,600,700);
 
-/*Variables*/
-
+/** VARIABLES  */
 :root {
   --font-principal: "Teko";
   --font-cursiva: "Dancing Script";
@@ -10,8 +9,17 @@
   --gris200: #706d6d;
 }
 
-/*Generales*/
+/** SCROLL BAR */
+body::-webkit-scrollbar {
+  width: 8px;
+}
 
+body::-webkit-scrollbar-thumb {
+  background-color: #f7ca37;
+  border-radius: 50px;
+}
+
+/** GENERALES */
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +41,7 @@ h3 {
   font-family: var(--font-cursiva);
 }
 
-/*Grid*/
+/** GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -50,15 +58,7 @@ h3 {
   grid-column: span 6;
 }
 
-/*Secciones*/
-
-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-/* Menu de navegación*/
+/** MENU DE NAVEGACION */
 nav {
   position: fixed;
   top: 0;
@@ -81,7 +81,7 @@ nav .enlaces {
   align-items: center;
 }
 
-nav .enalces a {
+nav .enlaces a {
   margin-right: 20px;
   font-family: var(--font-principal);
   font-size: 20px;
@@ -90,6 +90,127 @@ nav .enalces a {
   transition: all 0.5s;
 }
 
-nav .enalces a:hover {
+nav .enlaces a:hover {
   color: var(--gris200);
+}
+
+/*Sociales*/
+
+.sociales {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.sociales a {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+/*Header*/
+
+header {
+  position: relative;
+  width: 100%;
+  height: calc(100vh + 80px);
+  background: #f9db79;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(img/image1.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header .grid {
+  justify-items: center;
+  align-items: center;
+}
+
+header .text-content {
+  padding: 200px 0 0 0;
+}
+
+.text-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.text-content.full {
+  grid-column: span 12;
+}
+
+.text-content.full h1,
+.text-content.full h2 {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.text-content.full h1 {
+  font-size: 115px;
+  letter-spacing: 20px;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-content.full h2 {
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: 100;
+  line-height: 0.1;
+}
+
+header .text-content h3 {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  font-size: 50px;
+  font-weight: 700;
+  color: #000;
+}
+
+/** BOTONES */
+.btn {
+  background: transparent;
+  width: 130px;
+  height: 42px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn.light {
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn.dark {
+  color: var(--gris600);
+  border: 2px solid var(--gris600);
+}
+
+.btn:hover {
+  background: var(--gris600);
+  border: 2px solid var(--gris600);
+  color: #fff;
 }
