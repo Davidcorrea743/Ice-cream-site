@@ -232,7 +232,7 @@ nav .enlaces a:hover {
 header {
   position: relative;
   width: 100%;
-  height: calc(100vh + 50px);
+  height: calc(100vh + 80px);
   background: #f9db79;
 }
 
@@ -277,6 +277,8 @@ header .text-content h3 {
 }
 
 .especial::before {
+  content: "";
+  position: absolute;
   background: url(img/image3.webp);
 }
 
